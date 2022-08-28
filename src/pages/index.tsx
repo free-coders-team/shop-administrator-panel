@@ -1,9 +1,9 @@
-import { NextPage } from "next";
-import { Box, Text } from "@chakra-ui/react";
-
 import Head from "next/head";
 
-const Home: NextPage = () => {
+import { Box, Text } from "@chakra-ui/react";
+import { NextPageWithLayout } from "@/typings/web/next-page";
+
+const Home: NextPageWithLayout = () => {
   return (
     <Box>
       <Head>
