@@ -19,6 +19,7 @@
       "@/utils": ["utils/index.ts"],
       "@/utils/*": ["utils/*"],
       "@/components/*": ["components/*"],
+      "@/constants/*": ["constants/*"],
       "@/context/*": ["context/*"],
       "@/hooks/*": ["hooks/*"],
       "@/typings/*": ["typings/*"],
