@@ -1,12 +1,11 @@
-import "@/styles/index.scss";
-
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
-import { NextPageWithLayout } from "@/typings/web/next-page";
 
 import store from "@/store";
 import theme from "@/constants/web/colors";
+
+import { NextPageWithLayout } from "@/typings/web/next-page";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
