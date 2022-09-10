@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { Box, Text } from "@chakra-ui/react";
-import { NextPageWithLayout } from "@/typings/web/next-page";
+import { NextPageWithLayout } from "@/typings/next-page";
 
 const Home: NextPageWithLayout = () => {
   return (
