@@ -3,9 +3,9 @@ import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import store from "@/store";
-import theme from "@/constants/web/colors";
+import theme from "@/constants/colors";
 
-import { NextPageWithLayout } from "@/typings/web/next-page";
+import { NextPageWithLayout } from "@/typings/next-page";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
