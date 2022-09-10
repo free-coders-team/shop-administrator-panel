@@ -1,10 +1,10 @@
 {
-  "name": "web-skipe-team",
+  "name": "shop-administrator-panel",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -21,8 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.2",
-    "react-redux": "^8.0.2",
-    "swr": "^1.3.0"
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/node": "18.7.8",
