@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { queryParse } from "@/utils/web/next-query";
+import { queryParse } from "@/utils/next-query";
 
 const useNextParams = <T>(): [boolean, Partial<T>] => {
   const router = useRouter();
