@@ -1,24 +1,37 @@
 import { NextPage } from "next";
-import { Box, Flex, Grid, Heading, useTheme } from "@chakra-ui/react";
 import { Controller } from "react-hook-form";
+import { Box, Flex, Grid, Heading, useTheme } from "@chakra-ui/react";
 
 import { IcMail, IcKey } from "@/icons";
 
+import useLoginPage from "@/hooks/use-login-page";
+
 import Form from "@/components/form";
 import Button from "@/components/button";
-
-import useLoginPage from "@/hooks/use-login-page";
+import AlertMessage from "@/components/alert-message";
 
 const LoginPage: NextPage = () => {
   const theme = useTheme();
 
-  const { control, onSubmit, error, isLoading } = useLoginPage();
+  const { control, serverError, onSubmit, formError, loading, onClearServerError } =
+    useLoginPage();
 
   return (
     <Flex justifyContent="center">
       <Box py={16}>
-        <Heading textAlign="center">Organization Name</Heading>
-        <Box as="form" onSubmit={onSubmit} w={96} maxW={96} mt={32} mx="auto">
+        <Heading textAlign="center" fontSize="4xl" letterSpacing={2}>
+          Freelancer Coders
+        </Heading>
+        <Box
+          as="form"
+          p="12"
+          w="md"
+          mt={16}
+          mx="auto"
+          borderRadius={16}
+          onSubmit={onSubmit}
+          boxShadow="0 5px 15px rgba(0,0,0,0.1)"
+        >
           <Grid rowGap={10}>
             <Controller
               name="email"
@@ -30,8 +43,8 @@ const LoginPage: NextPage = () => {
                   type="email"
                   onBlur={onBlur}
                   onChange={onChange}
-                  error={error.email?.message}
-                  isError={Boolean(error.email)}
+                  error={formError.email?.message}
+                  isError={Boolean(formError.email)}
                   label={{
                     text: "Correo Electronico",
                     icon: <IcMail style={{ transform: "scale(0.8)" }} />,
@@ -49,8 +62,8 @@ const LoginPage: NextPage = () => {
                   type="password"
                   onBlur={onBlur}
                   onChange={onChange}
-                  error={error.password?.message}
-                  isError={Boolean(error.password)}
+                  error={formError.password?.message}
+                  isError={Boolean(formError.password)}
                   label={{
                     text: "Contraseña",
                     icon: <IcKey style={{ transform: "scale(0.8)" }} />,
@@ -60,7 +73,7 @@ const LoginPage: NextPage = () => {
             />
           </Grid>
           <Box mt={16}>
-            <Button type="submit" isLoading={isLoading}>
+            <Button type="submit" isLoading={loading}>
               Ingresar
             </Button>
           </Box>
@@ -74,6 +87,13 @@ const LoginPage: NextPage = () => {
         position="fixed"
         borderRadius="full"
         backgroundColor={theme.base.default}
+      />
+
+      <AlertMessage
+        open={serverError !== undefined}
+        onClickDone={onClearServerError}
+        title={String(serverError?.title)}
+        description={String(serverError?.description)}
       />
     </Flex>
   );

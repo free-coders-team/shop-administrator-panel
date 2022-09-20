@@ -1,6 +1,6 @@
 export const queryParse = <T>(query: T) => {
   const params = {} as T;
-  const keys = Object.keys(query as {});
+  const keys = Object.keys(query as object);
 
   keys.forEach((v) => {
     const key = v as keyof T;
