@@ -7,7 +7,7 @@ import signInService from "@/services/sign-in";
 
 import { createCookie } from "@/utils/cookie";
 import { isErrorResponse } from "@/utils/validators";
-import { COOKIE_TOKEN_NAME } from "@/constants/cookies";
+import { COOKIE_TOKEN_NAME, COOKIE_TOKEN_LIFE } from "@/constants/cookies";
 
 type FormState = {
   email: string;
@@ -75,7 +75,7 @@ const useLoginPage = () => {
 
     const token = responseData.payload.token;
 
-    createCookie(COOKIE_TOKEN_NAME, `Bearer ${token}`, 7);
+    createCookie(COOKIE_TOKEN_NAME, `Bearer ${token}`, COOKIE_TOKEN_LIFE);
     navigate("HOME");
   });
 
