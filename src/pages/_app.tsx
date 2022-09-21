@@ -1,5 +1,3 @@
-import "@/styles/index.scss";
-
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";

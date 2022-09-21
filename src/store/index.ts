@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import memberReducer from "./member/reducer";
+
 const store = configureStore({
-  reducer: {},
   devTools: true,
+  reducer: {
+    memberReducer,
+  },
 });
 
 export default store;

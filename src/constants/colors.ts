@@ -5,8 +5,8 @@ const theme = extendTheme({
     default: defaultTheme.colors.messenger[600],
   },
   text: {
-    light: defaultTheme.colors.gray["500"],
-    default: defaultTheme.colors.gray["600"],
+    regular: defaultTheme.colors.gray["600"],
+    default: defaultTheme.colors.gray["700"],
   },
 });
 
